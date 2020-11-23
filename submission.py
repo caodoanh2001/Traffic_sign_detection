@@ -19,13 +19,13 @@ def export(detect_dir, output):
     test_dir = './data'
     list_npy = os.listdir(detect_dir)
     dir_npy = detect_dir
-    threshold = 0.4
+    threshold = 0.3
 
     #Xuat file json chua ten cac image trong thu muc data
-    test_dir = os.listdir('./data')
+    test_dirs = os.listdir('./data')
     test_dir_dict = {}
     test_dir_list = []
-    for i in test_dir:
+    for i in test_dirs:
       i_dict = {}
       i_dict["file_name"] = i
       i_dict["id"] = int(os.path.splitext(i)[0])
