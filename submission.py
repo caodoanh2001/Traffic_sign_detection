@@ -21,6 +21,21 @@ def export(detect_dir, output):
     dir_npy = detect_dir
     threshold = 0.4
 
+    #Xuat file json chua ten cac image trong thu muc data
+    test_dir = os.listdir('./data')
+    test_dir_dict = {}
+    test_dir_list = []
+    for i in test_dir:
+      i_dict = {}
+      i_dict["file_name"] = i
+      i_dict["id"] = int(os.path.splitext(i)[0])
+      test_dir_list.append(i_dict)
+    test_dir_dict["images"] = test_dir_list
+
+    with open('./test_directory.json', 'w') as test_dir_json:
+      test_dir_json.write(str(test_dir_dict).replace("'",'"'))
+
+
     #In detection ra dict
     all_detection = []
     for npy in list_npy:
