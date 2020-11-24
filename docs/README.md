@@ -1,11 +1,11 @@
 File model detect (bỏ vào thư mục model/detect/): https://drive.google.com/file/d/1c1jEyfo4OhFJopOleIpFMRbnpHEbdmPK/view?usp=sharing
 
-#0. Introduction
+###0. Introduction
 
 Source code used for Zalo AI Challenge track Traffic sign detection.
 Wrote by Doanh B C.
 
-#1. Installation
+###1. Installation
 
 Install libraries:
 `
@@ -17,7 +17,7 @@ Build source:
 python -m pip install -e .
 `
 
-#1. Training
+###2. Training
 
 run script train.py for training
 
@@ -30,7 +30,7 @@ python train.py --train_dir <folder train> \
 		--lr <learning rate>
 ```
 
-#2 Export result via json:
+###3 Export result via json:
 
 ```
 bash predict.sh
@@ -43,13 +43,13 @@ python detect.py
 python submission.py
 ```
 
-#3 Visualize:
+###4 Visualize:
 
 ```
 python visualize.py
 ```
 
-#4 Calculate map:
+###5 Calculate map:
 
 ```
 python test_map.py
