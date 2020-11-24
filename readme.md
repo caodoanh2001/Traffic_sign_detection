@@ -54,3 +54,13 @@ python visualize.py
 ```
 python test_map.py
 ```
+
+## 6 Calculate mAP
+
+```
+python test_map.py
+    --test_dir <folder test>
+    --json_dir <folder test annotation>
+    --config <folder config>
+    --weight <folder weight>
+```
