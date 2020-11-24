@@ -30,7 +30,7 @@ python train.py --train_dir <folder train> \
 		--lr <learning rate>
 ```
 
-## 3 Export result via json:
+## 3. Export result via json:
 
 ```
 bash predict.sh
@@ -43,19 +43,19 @@ python detect.py
 python submission.py
 ```
 
-## 4 Visualize:
+## 4. Visualize:
 
 ```
 python visualize.py
 ```
 
-## 5 Calculate map:
+## 5. Calculate map:
 
 ```
 python test_map.py
 ```
 
-## 6 Calculate mAP
+## 6. Calculate mAP
 
 ```
 python test_map.py
