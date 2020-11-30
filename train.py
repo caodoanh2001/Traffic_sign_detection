@@ -33,7 +33,9 @@ def train(train_dir, name_data, json_dir, config, resume_status, iteration, batc
     cfg.SOLVER.MAX_ITER = iteration
     cfg.SOLVER.GAMMA = 0.05
     cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = batch
-    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 7
+    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
+    cfg.DATASETS.TRAIN = (name_data,)
+    cfg.DATASETS.TEST = ()
 
     try:
         register_coco_instances(name_data, {}, json_dir, train_dir) # Train data
@@ -59,7 +61,7 @@ def get_args():
                         default='ZALO_AI_train',
                         help='Name data', dest='name')
     parser.add_argument('--config', type=str,
-                        default='Misc/scratch_mask_rcnn_R_50_FPN_9x_gn.yaml',
+                        default='COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml',
                         help='config name', dest='config')
     parser.add_argument('--resume', type=str,
                         default=0,
@@ -68,10 +70,10 @@ def get_args():
                         default=500,
                         help='Iteration', dest='iter')
     parser.add_argument('--batch', type=int,
-                        default=128',
+                        default=128,
                         help='num of batch', dest='batch')
-    parser.add_argument('--lr', type=int,
-                        default=0.0125',
+    parser.add_argument('--lr', type=float,
+                        default=0.0125,
                         help='learning rate', dest='lr')
     args = parser.parse_args()
 
@@ -79,4 +81,4 @@ def get_args():
 
 if __name__ == '__main__':
     args = get_args()
-    train(args.train_dir, args.name, args.json_dir, args.config, args.resume, args.iter, agrs.batch, agrs.lr)
+    train(args.train_dir, args.name, args.json_dir, args.config, args.resume, args.iter, args.batch, args.lr)
