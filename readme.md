@@ -3,7 +3,7 @@ File model detect (bỏ vào thư mục model/detect/): https://drive.google.com
 ## 0. Introduction
 
 Source code used for Zalo AI Challenge track Traffic sign detection.
-Wrote by Doanh B C.
+Wrote by Doanh B C...
 
 ## 1. Installation
 
